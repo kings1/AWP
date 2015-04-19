@@ -31,5 +31,24 @@ class HomeController extends BaseController {
 
 		return Redirect::route('home');
 	}
+	public function getNew(){
+		return view::make('new');
+	}
 
+	public function postNew(){
+		$rules = array('name' => 'required|min:3|max:255' );
+		$validator = validator::make(Input::all(), $rules);
+
+
+		if($validator->fails()){
+			$return Redirect::route('new')->withErrors($validator);
+		}
+
+		$item = new Item;
+		$item->name = Input::get('name');
+		$item->owner_id=Auth::user()->id;
+		$item->save();
+
+		return Redirect::route('home');
+	}
 }
