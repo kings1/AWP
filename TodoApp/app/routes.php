@@ -18,6 +18,8 @@ Route::post('/', array(
 Route::get('/new', array('as' =>new, 'uses' =>'HomeController@getNew'));
 Route::post('/new', array('uses' => 'HomeController@postNew'))->before('csrf');
 
+Route::get('/delete/{task}', array('as' => 'delete', 'uses' =>'HomeController@getDelete'));
+
 
 Route::get('/login', array(
 	'as' => 'login',

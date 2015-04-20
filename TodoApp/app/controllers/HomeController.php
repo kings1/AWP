@@ -20,12 +20,12 @@ class HomeController extends BaseController {
 
 	public function postIndex(){
 		$id = Input::get('id');
-		$userId = Auth::user()->id;
+		
 		
 		$item = Item::findOrFail($id);
 		//echo $id;
 
-		if ($item->owner_id == $userId) {
+		if ($item->owner_id == $userId = Auth::user()->id) {
 			$item->mark();	
 		}
 
@@ -49,6 +49,15 @@ class HomeController extends BaseController {
 		$item->owner_id=Auth::user()->id;
 		$item->save();
 
+		return Redirect::route('home');
+	}
+
+	public function getDelete(Item $task){
+		
+		if($task->owner_id == Auth::user()->id){
+
+			$task->delete();
+		}
 		return Redirect::route('home');
 	}
 }
