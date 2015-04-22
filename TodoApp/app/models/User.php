@@ -25,8 +25,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	public function items()	{
 		return $this->hasMany('Item', 'owner_id');
-		/*If we leave the 2nd param empty, laravel will by default
-		use the model name which is "User" with "_id" ie. User_id.*/
+		/*If we leave the 2nd param empty, laravel will by default use the model name which is "User" with "_id" ie. User_id.*/
 	}
 
 }

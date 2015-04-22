@@ -3,7 +3,7 @@
 class ItemsTableSeeder extends Seeder {
 	public function run(){
 
-		DB::table('items')->delete();//First delete table content
+		DB::table('items')->delete();/*First delete table content*/
 
 		$items = array(
 			array(
@@ -25,6 +25,6 @@ class ItemsTableSeeder extends Seeder {
 			),
 		);
 
-		DB::table('items')->insert($items);//Insert data into table
+		DB::table('items')->insert($items);/*Insert data into table*/
 	}
 }

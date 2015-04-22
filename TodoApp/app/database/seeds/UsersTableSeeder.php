@@ -3,7 +3,7 @@
 class UsersTableSeeder extends Seeder {
 	public function run(){
 
-		DB::table('users')->delete(); //First delete table content
+		DB::table('users')->delete(); /*First delete table content*/
 
 		$users = array(
 			array(
@@ -13,6 +13,6 @@ class UsersTableSeeder extends Seeder {
 			)
 		);
 
-		DB::table('users')->insert($users); //Insert data into users table
+		DB::table('users')->insert($users); /*Insert data into users table*/
 	}
 }
