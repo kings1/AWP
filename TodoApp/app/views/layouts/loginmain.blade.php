@@ -8,6 +8,15 @@
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/app.css') }}">
 	{{-- Asset returns the path to public folder --}}
 
+	<style type="text/css">
+		body {
+			background-image: url('img/office.jpg');
+			background-size: cover;
+			margin-top: 150px;
+			//background-repeat: no-repeat;
+		}
+	</style>	
+
 </head>
 <body>
 
@@ -19,22 +28,13 @@
 				<div class="navbar-header pull-left">
 		      <a class="navbar-brand" href="{{ URL::route('home') }}">GladiatorNote</a>
 		    </div>
-				
-				<div id="navbar" class="navbar-collapse collapse pull-right">
-				  <ul class="navbar-nav nav">
-				  	<li>{{ HTML::link('logout', 'Logout') }}</li>
-				  </ul>
-				</div>
 			</div>
 		</nav>
 
 		<div class="container">
-			<div class="listcontainer">
 
 			@yield('content')
 			{{-- Print out whatever is b/w section() & stop() tags wherever layouts.main is called. --}}
-
-			</div>
 		</div>
 	</div>
 	</div>

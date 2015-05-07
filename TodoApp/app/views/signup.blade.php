@@ -11,12 +11,8 @@
 		</div>
 
 		<div class="col-md-4 col-md-offset-2 formcontainer">
-		  {{ Form::open(/*array('autocomplete' => 'off')*/) }}
-
-				<h3 class="text-primary">Please Login</h3>
-				{{--@foreach ($errors->all() as $error)
-					<div class="alert alert-danger" role="alert">{{$error}}</div>
-				@endforeach--}}
+		  {{ Form::open() }}
+				<h3 class="text-primary">Please Sign Up</h3>
 
 				@if($errors->any())
 				<div class="alert alert-danger" role="alert">
@@ -25,17 +21,21 @@
 				@endif
 				
 				<div class="form-group form-group-lg">
-					<input type="text" class="form-control" name="username" placeholder="Username">
+					{{-- <input type="text" class="form-control" name="username" placeholder="Username"> --}}
+					{{ Form::text('name', '', array('placeholder' => 'Username', 'class' => 'form-control'))}}
+				</div>
+
+				<div class="form-group form-group-lg">
+					<input type="email" class="form-control" name="email" id="email" placeholder="Email">
 				</div>
 
 				<div class="form-group form-group-lg">
 					<input type="password" class="form-control" name="password" placeholder="Password">
 				</div>
 				
-				<div class="btn-group btn-group-lg" role="group">
-					<button type="submit" name="submit" class="btn btn-success btn-lg">Login</button>
-					<button type="button" class="btn btn-primary btn-lg" onClick="location.href='{{URL::route("signup")}}'">Sign Up</button>
-				</div>
+				<button type="submit" name="submit" class="btn btn-success btn-lg">Sign Up</button>
+
+				<button type="button" name="submit" class="btn btn-primary btn-lg" onClick="location.href='{{URL::route("login")}}'">Cancel</button>
 
 		  {{ Form::close() }}
 		</div>

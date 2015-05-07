@@ -3,9 +3,9 @@
 
 @section('content')
 
-	<h1>Your Items 
+	<h1 class="list">Your Items 
 		<small>
-			(<a href="{{ URL::route('new') }}">New Task</a>)
+			|<a href="{{ URL::route('new') }}"> +</a>
 		</small>
 	</h1>
 	
@@ -13,10 +13,11 @@
 		@foreach($items as $item)
 			<li>
 			{{ Form::open() }}
-				<input type="checkbox" onClick="this.form.submit()" {{ $item->done ? 'checked' : ''}} />
+				<input type="checkbox" onclick="document.form.submit()" {{ $item->done ? 'checked' : ''}} />
+
 				<input type="hidden" name="id" value="{{ $item->id }}" />
 
-				{{ $item->name }} <s>(<a href="{{ URL::route('delete', $item->id) }}"> x </a>)</s>
+				{{ e($item->name) }} <s><a href="{{ URL::route('delete', $item->id) }}"> <button type="button" class="btn btn-primary btnSize">Delete</button> </a></s>
 			{{ Form::close() }}
 			</li>
 		@endforeach

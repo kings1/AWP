@@ -1,0 +1,88 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	padding: 20px;
+	background: #e1e1e1;
+}
+
+.listcontainer {
+	width: 70%;
+	max-width: 300px;
+	margin: 0 auto;
+	background: #ffffff;
+	border: 4px solid #cccccc;
+	padding: 20px;
+	border-radius: 7px;
+	//box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formcontainer {
+	width: 100%;
+	margin: 0 auto;
+	background: #ffffff;
+	border: 4px solid #cccccc;
+	padding: 10px;
+	border-radius: 7px;
+}
+
+form {
+	margin: 0;
+}
+
+form input {
+	border-radius: 4px;
+	display: block;
+	margin: 0 0 10px 0;
+	border: 1px solid #bbb;
+	background: white;
+	padding: 4px;
+}
+
+/*form input[type=text], form input[type=password] {
+	-webkit-appearance: none;
+}*/
+
+form input[type=submit]:hover {
+	background: #eee;
+	cursor: pointer;
+}
+
+.sub {
+	float: left;
+}
+
+p.error {
+	color: #aa0000;
+}
+
+h1.list {
+	color: #41546c;
+	border-bottom: 1px solid #ccc;
+	margin: 0 0 15px 0;
+	padding: 0 0 15px 0;
+	//font-size: 22px;
+	font-weight: bold;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul li {
+	line-height: 40px;
+}
+
+a:link, a:visited {
+	color: #4e7ea7;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+form input[type=checkbox]{
+	display: inline;
+}

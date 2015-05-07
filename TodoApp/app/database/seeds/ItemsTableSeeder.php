@@ -24,7 +24,7 @@ class ItemsTableSeeder extends Seeder {
 				'done' => false
 			),
 		);
-
-		DB::table('items')->insert($items);/*Insert data into table*/
+		/*Insert data into table*/
+		DB::table('items')->insert($items);
 	}
 }

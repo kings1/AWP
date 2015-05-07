@@ -17,12 +17,13 @@ Route::post('/', array(
 	'uses' => 'HomeController@postIndex'
 ))->before('csrf');
 
-
+/*Get route for new task page*/
 Route::get('/new', array(
 	'as' => 'new',
 	'uses' => 'HomeController@getNew'
 ));
 
+/*Post route to submit new task */
 Route::post('/new', array(
 	'uses' => 'HomeController@postNew'
 ))->before('csrf');
@@ -43,3 +44,16 @@ Route::post('login', array(
 	'uses' => 'AuthController@postLogin'
 ))->before('csrf');
 /* ->before('csrf') guards against csrf attacks */
+
+Route::get('/signup', array(
+	'as' => 'signup',
+	'uses' => 'AuthController@getSignup'
+))->before('guest');
+
+Route::post('signup', array(
+	'uses' => 'AuthController@postSignup'
+))->before('csrf');
+
+Route::get('logout', array(
+	'uses' => 'AuthController@getLogout'
+));
